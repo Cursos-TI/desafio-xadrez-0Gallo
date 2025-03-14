@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 int main () {
 
     int b = 0;
@@ -30,6 +28,17 @@ int main () {
         r++;
     } while (r < 8);
 
+    //. movimentação do cavalo
+    printf("\n");
+    printf("\n");
+    printf("Cavalo. \n");
+
+    for (int ce = 0; ce < 1; ce++){
+        for (int cb = 0; cb < 2; cb++){
+            printf("Baixo . ");
+        }
+        printf("Esquerda . ");
+    }
 //. fim do programa.
     return 0;
 }
