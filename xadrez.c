@@ -1,44 +1,68 @@
-int main () {
+#include <stdio.h>
 
-    int b = 0;
-    int r = 0;
+//. setado a movimentação torre
+void torre(int casas){
+    if (casas > 0) {
+        printf("Direitra . ");
+        torre (casas - 1);
+    }
+}
+//. setado a movimentação bispo
+void bispo(int casas){
+    if (casas > 0) {
+        printf("Cima, Direita . ");
+        bispo (casas - 1);
+    }
+}
+//. setado a movimentação rainha
+void rainha(int casas){
+    if (casas > 0) {
+        printf("Esquerda . ");
+        rainha (casas - 1);
+    }
+}
+//. setado a movimentação do cavalo para cima
+void cavaloc(int casasc){
+    if (casasc > 0) {
+        printf("Cima . ");
+        cavaloc(casasc - 1);
+    }
+}
+//. setado a movimentação do cavalo para a direita
+void cavalod(int casasd){
+    if (casasd > 0){
+        printf("Direita . ");
+        cavalod(casasd - 1);
+    }
+}
+
+int main () {
 
 //. movimentação da torre no tabuleiro.
     printf("\n");
     printf("Torre. \n ");
-    for (int t = 0; t < 5; t++) {
-        printf("Direita . ");
-    }
+    torre(5);
+    printf("\n");
 
 //. movimentação do bispo no tabuleiro
     printf("\n");
-    printf("\n");
     printf("Bispo.\n");
-    while(b < 5){
-        printf("Cima, Direita . ");
-        b++;
-    }
+    bispo(5);
+    printf("\n");
 
 //. movimentação da rainha no tabuleiro
     printf("\n");
-    printf("\n");
     printf("Rainha. \n");
-    do {
-        printf("Esquerda . ");
-        r++;
-    } while (r < 8);
+    rainha(8);
+    printf("\n");
 
     //. movimentação do cavalo
     printf("\n");
-    printf("\n");
     printf("Cavalo. \n");
-
-    for (int ce = 0; ce < 1; ce++){
-        for (int cb = 0; cb < 2; cb++){
-            printf("Baixo . ");
-        }
-        printf("Esquerda . ");
-    }
+    cavaloc (2);
+    cavalod (1);
+    
+    
 //. fim do programa.
     return 0;
 }
